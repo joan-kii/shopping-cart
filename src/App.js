@@ -1,8 +1,12 @@
-function App() {
+import React from 'react';
+import HomeStyled from './styles/HomeStyled';
+import Title from './styles/TitleStyled';
+
+const App = () => {
   return (
-    <div>
-      <h1>Hello world!</h1>
-    </div>
+    <HomeStyled>
+      <Title>guitART</Title>
+    </HomeStyled>
   );
 }
 
