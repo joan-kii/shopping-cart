@@ -5,9 +5,13 @@ import LinkStyled from '../styles/LinkStyled';
 
 const Footer = () => {
   return (
-    <footer style={{position: 'fixed', bottom: 0, width: '100%'} }>
+    <footer 
+      style={{position: 'fixed', 
+              bottom: 0, 
+              width: '100%',
+              backgroundColor: '#0e1111'}} >
 
-      <Navbar className='bg-dark justify-content-around'>
+      <Navbar className='justify-content-around'>
         <Nav>
           <Nav.Link 
             href='https://www.nashguitars.com' 

@@ -7,8 +7,10 @@ import LinkStyled from '../styles/LinkStyled';
 
 const Topbar = () => {
   return (
-    <header>
-      <Navbar className='bg-dark justify-content-between'>
+    <header 
+      style={{backgroundColor: '#0e1111'}} >
+      <Navbar 
+        className='justify-content-between'>
 
         <Navbar.Brand>
           <Link to='/'>
