@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 const CardStyled = styled.div`
-  font-family: 'Rock Salt';
+  font-family: 'Amatic SC';
+  font-size: 2em;
   margin-top: 20px;
-  box-shadow: 5px 2px 20px black;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 20px grey;
   cursor: pointer;
   transition: transform 0.2s linear;
   :hover{
@@ -11,9 +13,8 @@ const CardStyled = styled.div`
   }
 
   .title {
-    color: white;
+    font-size: 1em;
     padding: 6px;
-    background-image: radial-gradient(black, black, white);
     text-align: center;
     border-radius: 5px;
   }

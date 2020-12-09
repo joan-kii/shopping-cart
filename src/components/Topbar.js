@@ -8,7 +8,12 @@ import LinkStyled from '../styles/LinkStyled';
 const Topbar = () => {
   return (
     <header 
-      style={{backgroundColor: '#0e1111'}} >
+      style={{
+        position: 'fixed',
+        zIndex: '1',
+        top: '0',
+        width: '100%',
+        backgroundColor: '#0e1111'}} >
       <Navbar 
         className='justify-content-between'>
 
@@ -20,17 +25,17 @@ const Topbar = () => {
 
         <Nav>
 
-          <Nav.Link>
+          <Nav>
             <Link to='/'>
               <LinkStyled>Home</LinkStyled>
             </Link>
-          </Nav.Link>
+          </Nav>
 
-          <Nav.Link>
+          <Nav>
             <Link to='/catalog'>
               <LinkStyled>Shop</LinkStyled>
             </Link>
-          </Nav.Link>
+          </Nav>
 
         </Nav>
 

@@ -6,8 +6,8 @@ import LinkStyled from '../styles/LinkStyled';
 const Footer = () => {
   return (
     <footer 
-      style={{position: 'fixed', 
-              bottom: 0, 
+      style={{position: 'relative', 
+              bottom: '0', 
               width: '100%',
               backgroundColor: '#0e1111'}} >
 
