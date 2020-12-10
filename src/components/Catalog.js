@@ -9,6 +9,7 @@ const Catalog = () => {
 
   const handleClick = (index) => {
     <Link to={`/${itemsList[index].name}`} />
+    console.log(itemsList[index].name)
   };
 
   const items = itemsList.map((item, index) => 
