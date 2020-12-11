@@ -6,5 +6,5 @@ const LinkStyled = styled.h3`
   color: white;
   text-decoration: inherit;
   margin-right: 2em;
-  `
+  `;
 export default LinkStyled;

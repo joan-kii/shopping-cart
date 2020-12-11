@@ -3,15 +3,19 @@ import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card'; 
 import Button from 'react-bootstrap/Button';
 import ProductPageStyled from '../styles/ProductPageStyled';
+import itemsList from '../assets/ItemsList';
 
 const ProductPage = (props) => {
+  console.log(props)
+  const product = itemsList.find((i) => i.name === props.name); 
+
   return (
     <ProductPageStyled>
-      <Image src={props.image} />
+      <Image src={product.image} />
       <Card>
-        <Card.Title>{props.name}</Card.Title>
-        <Card.Text>{props.text}</Card.Text>
-        <Card.Text>{props.price}</Card.Text>
+        <Card.Title>{product.name}</Card.Title>
+        <Card.Text>{product.text}</Card.Text>
+        <Card.Text>{product.price}</Card.Text>
         <Button>Add to cart</Button>
       </Card>
       <Button>Go to checkout</Button>

@@ -7,18 +7,15 @@ import image from '../assets/concert.jpg';
 
 const Catalog = () => {
 
-  const handleClick = (index) => {
-    <Link to={`/${itemsList[index].name}`} />
-    console.log(itemsList[index].name)
-  };
-
   const items = itemsList.map((item, index) => 
-  <CardItem
-    key={index}
-    image={item.image}
-    name={item.name}
-    price={item.price}
-    onClick={() => handleClick(index)} />
+  <Link 
+    key={index} 
+    to={`/catalog/${item.name}`}>
+    <CardItem
+      image={item.image}
+      name={item.name}
+      price={item.price} />
+    </Link>
     );
 
   return (

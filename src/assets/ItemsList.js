@@ -45,7 +45,7 @@ const itemsList = [
     price: '2.280,00 €'
   },
   {
-    name: 'NG-Surfer Green',
+    name: 'NG-Green',
     image: SurferGreen,
     text: "The Wayfarer is not only straightforward but is extremely versatile as well. We have paired the three humbuckers with a push/pull coil tap tone knob and a five way selector switch. This guitar features DiMarzio Bluesbuckers in the neck and middle positions, and an Air Norton in the bridge. Unlike most humbuckers, the Bluesbucker is the only pickup we have come across that has a genuine single coil sound when tapped. In single coil mode this guitar has the sound you would expect from our S Models, including the 2 and 4 position quack. In humbucking mode you get everything you'd want from true humbucking guitar. Additionally, there's no sacrifice in sustain because these pickups have extremely low string pull while still offering high output.",
     price: '1.995,00 €'
