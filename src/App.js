@@ -10,7 +10,7 @@ const App = () => {
       <div className='banner'>
         <Title>guitART</Title>
         <q>Works of art make rules;<br/>
-           rules do not make works of arts.</q><br/>
+           rules do not make works of arts.</q>
            - Claude Debussy
         <Link style={{padding: '1.3em'}} to='/catalog'>
           <Button 

@@ -5,6 +5,7 @@ import Catalog from './components/Catalog';
 import ProductPage from './components/ProductPage';
 import Topbar from './components/Topbar';
 import Footer from './components/Footer';
+import Checkout from './components/Checkout';
 
 const Routes = () => {
   return (
@@ -19,6 +20,7 @@ const Routes = () => {
             <ProductPage 
               name={routeProps.match.params.name} />
           )} />
+        <Route exact path='/checkout' component={Checkout} />
       </Switch> 
       <Footer /> 
     </BrowserRouter>

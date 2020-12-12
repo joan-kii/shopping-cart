@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
@@ -7,7 +7,11 @@ import itemsList from '../assets/ItemsList';
 
 const ProductPage = (props) => {
 
+  const [showCheckoutButton, setShowCheckoutButton] = useState(false);
   const product = itemsList.find((item) => item.name === props.name); 
+  const handleClick = () => {
+    setShowCheckoutButton(true);
+  };
 
   return (
     <ProductPageStyled>
@@ -17,16 +21,29 @@ const ProductPage = (props) => {
           <h2 className='productName'>{product.name}</h2>
           <p className='productInfo'>{product.text}</p>
           <p className='productPrice'>{product.price}</p>
+          {showCheckoutButton && <h3>Added to your cart</h3> }
           <div className='wrapButtons'>
             <Link to='/catalog'>
-              <Button variant='outline-dark'size='lg' className='button'>Back to shop</Button>
+              <Button 
+                variant='outline-dark'
+                size='lg' 
+                className='button'>Back to shop</Button>
             </Link>
-            <Link >
-              <Button variant='outline-dark'size='lg' className='button'>Add to cart</Button>
-            </Link>
-            <Link >
-              <Button variant='outline-dark'size='lg' className='button'>Go to checkout</Button>
-            </Link>
+            {!showCheckoutButton && 
+              <Link >
+                <Button 
+                  variant='outline-dark'
+                  size='lg' 
+                  className='button'
+                  onClick={handleClick}>Add to cart</Button>
+              </Link>}
+            {showCheckoutButton && 
+              <Link to='/checkout'>
+                <Button 
+                variant='outline-dark'
+                size='lg' 
+                className='button'>Go to checkout</Button>
+              </Link>}
           </div>
         </div>
       </div>
