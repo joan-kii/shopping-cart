@@ -6,7 +6,7 @@ const HomeStyled = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 15%;
+  padding: 14%;
   background-image: url(${image});
   background-color: #0e1111;
 

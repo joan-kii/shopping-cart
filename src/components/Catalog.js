@@ -10,7 +10,8 @@ const Catalog = () => {
   const items = itemsList.map((item, index) => 
   <Link 
     key={index} 
-    to={`/catalog/${item.name}`}>
+    to={`/catalog/${item.name}`}
+    style={{textDecoration: 'none', color: 'black'}}>
     <CardItem
       image={item.image}
       name={item.name}

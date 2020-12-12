@@ -9,18 +9,17 @@ const ProductPageStyled = styled.div`
   flex-grow: 1;
   padding-top: 5%;
   padding-bottom: 2%;
-  border-radius: 5px;
   font-family: 'Amatic SC';
-  font-size: 1.5em;
   background-image: url(${image});
   background-color: #0e1111;  
-
+  
   .content {
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     height: auto;
     width: 70%;
-    padding: 20px 40px;
+    padding: 30px;
     background-color: white;
   }
 
@@ -32,6 +31,33 @@ const ProductPageStyled = styled.div`
   .productInfo {
     display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+
+  .productName {
+    padding: 1em;
+    font-size: 1.5em;
+  }
+
+  .productInfo{
+    padding: 1em;
+    font-size: 1.2em;
+  }
+
+  .productPrice {
+    padding: 1em;
+    font-size: 1.5em;
+  }
+
+  .wrapButtons {
+    display: flex;
+    
+    justify-content: space-between;
+  }
+
+  .button {
+    padding: 0.5em;
+    margin: 0.5em;
   }
 `;
 
