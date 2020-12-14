@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Title from '../styles/TitleStyled';
 import LinkStyled from '../styles/LinkStyled';
+import { BsBag as Cart } from 'react-icons/bs';
 
 const Topbar = () => {
   return (
@@ -37,6 +38,14 @@ const Topbar = () => {
             </Link>
           </Nav>
 
+          <Nav>
+            <Link to='/checkout'>
+              <LinkStyled>
+                <Cart className='cartIcon' />
+                <span className='itemsIcon'>0</span>
+              </LinkStyled>
+            </Link>
+          </Nav>
         </Nav>
 
       </Navbar>   
