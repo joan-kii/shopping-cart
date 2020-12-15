@@ -21,4 +21,5 @@ const LinkStyled = styled.h3`
     font-size: 0.7em;
   }
   `;
+  
 export default LinkStyled;
