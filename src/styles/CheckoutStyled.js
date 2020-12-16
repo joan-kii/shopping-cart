@@ -17,10 +17,22 @@ const CheckoutStyled = styled.div`
   .content {
     border-radius: 5px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 50%;
     padding: 30px;
     background-color: white;
+  }
+
+  .checkoutTitle {
+    margin-top: 20px;
+    font-size: 3em;
+  }
+
+  .guitarImage {
+    margin-top: 70px;
+    width: 10em;
+    height: 10em;
   }
   `;
 

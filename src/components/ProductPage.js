@@ -7,9 +7,14 @@ import itemsList from '../assets/ItemsList';
 
 const ProductPage = (props) => {
 
-  const [showCheckoutButton, setShowCheckoutButton] = useState(false);
   const product = itemsList.find((item) => item.name === props.name); 
+  
+  const [showCheckoutButton, setShowCheckoutButton] = useState(false);
+  const [addedToCart, setAddedToCart] = useState(product.addedToCart);
+  console.log(addedToCart)
+
   const handleClick = () => {
+    setAddedToCart(true);
     setShowCheckoutButton(true);
   };
 
@@ -21,7 +26,7 @@ const ProductPage = (props) => {
           <h2 className='productName'>{product.name}</h2>
           <p className='productInfo'>{product.text}</p>
           <p className='productPrice'>{product.price}</p>
-          {showCheckoutButton && <h3>Added to your cart</h3> }
+          {addedToCart && <h3>Added to your cart</h3> }
           <div className='wrapButtons'>
             <Link to='/catalog'>
               <Button 
@@ -30,7 +35,7 @@ const ProductPage = (props) => {
                 className='button'>Back to shop</Button>
             </Link>
             {!showCheckoutButton && 
-              <Link >
+              <Link to='/checkout'>
                 <Button 
                   variant='outline-dark'
                   size='lg' 
