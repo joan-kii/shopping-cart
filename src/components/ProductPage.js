@@ -1,23 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import ProductPageStyled from '../styles/ProductPageStyled';
-import itemsList from '../assets/ItemsList';
+import ItemsListContext from '../assets/ItemsList';
 
 const ProductPage = (props) => {
 
-  const product = itemsList.find((item) => item.name === props.name); 
-  
-  const [showCheckoutButton, setShowCheckoutButton] = useState(false);
-  const [addedToCart, setAddedToCart] = useState(product.addedToCart);
-  console.log(addedToCart)
+  const itemsList = useContext(ItemsListContext);
 
+  /* const product = itemsList.find((item) => item.name === props.name); */ 
+  const itemIndex = itemsList.findIndex((item) => item.name === props.name);
+  const product = itemsList[itemIndex];
+  const [showCheckoutButton, setShowCheckoutButton] = useState(false);
+
+  /* const [addedToCart, setAddedToCart] = useState(itemsList[itemIndex].addedToCart); */
   const handleClick = () => {
-    setAddedToCart(true);
+    itemsList[itemIndex].addedToCart = true;
     setShowCheckoutButton(true);
   };
 
+  console.log(itemsList[itemIndex].addedToCart)
   return (
     <ProductPageStyled>
       <div className='content'>
@@ -26,7 +29,7 @@ const ProductPage = (props) => {
           <h2 className='productName'>{product.name}</h2>
           <p className='productInfo'>{product.text}</p>
           <p className='productPrice'>{product.price}</p>
-          {addedToCart && <h3>Added to your cart</h3> }
+          {itemsList[itemIndex].addedToCart && <h3>Added to your cart</h3> }
           <div className='wrapButtons'>
             <Link to='/catalog'>
               <Button 
@@ -35,7 +38,7 @@ const ProductPage = (props) => {
                 className='button'>Back to shop</Button>
             </Link>
             {!showCheckoutButton && 
-              <Link to='/checkout'>
+              <Link >
                 <Button 
                   variant='outline-dark'
                   size='lg' 

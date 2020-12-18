@@ -1,3 +1,4 @@
+import React from 'react';
 import T68 from '../assets/ng-t68.jpg';
 import T69TL from '../assets/ng-t69tl.jpg';
 import T56GT from '../assets/ng-s81.jpg';
@@ -66,4 +67,6 @@ const itemsList = [
   }
 ];
 
-export default itemsList;
+const ItemsListContext = React.createContext(itemsList);
+
+export default ItemsListContext;

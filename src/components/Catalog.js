@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CardItem from './CardItem';
 import RowStyled from '../styles/RowStyled';
-import itemsList from '../assets/ItemsList';
+import ItemsListContext from '../assets/ItemsList';
 import { Link } from 'react-router-dom';
 import image from '../assets/concert.jpg';
 
 const Catalog = () => {
 
+  const itemsList = useContext(ItemsListContext);
   const items = itemsList.map((item, index) => 
   <Link 
     key={index} 
