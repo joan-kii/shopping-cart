@@ -9,18 +9,15 @@ const ProductPage = (props) => {
 
   const itemsList = useContext(ItemsListContext);
 
-  /* const product = itemsList.find((item) => item.name === props.name); */ 
   const itemIndex = itemsList.findIndex((item) => item.name === props.name);
   const product = itemsList[itemIndex];
-  const [showCheckoutButton, setShowCheckoutButton] = useState(false);
-
-  /* const [addedToCart, setAddedToCart] = useState(itemsList[itemIndex].addedToCart); */
+  const [productAddedToCart, setProductAddedToCart] = useState(product.addedToCart)
+ 
   const handleClick = () => {
-    itemsList[itemIndex].addedToCart = true;
-    setShowCheckoutButton(true);
+    setProductAddedToCart(true);
   };
 
-  console.log(itemsList[itemIndex].addedToCart)
+  console.log(productAddedToCart)
   return (
     <ProductPageStyled>
       <div className='content'>
@@ -29,7 +26,7 @@ const ProductPage = (props) => {
           <h2 className='productName'>{product.name}</h2>
           <p className='productInfo'>{product.text}</p>
           <p className='productPrice'>{product.price}</p>
-          {itemsList[itemIndex].addedToCart && <h3>Added to your cart</h3> }
+          {productAddedToCart && <h3>Added to your cart</h3> }
           <div className='wrapButtons'>
             <Link to='/catalog'>
               <Button 
@@ -37,15 +34,15 @@ const ProductPage = (props) => {
                 size='lg' 
                 className='button'>Back to shop</Button>
             </Link>
-            {!showCheckoutButton && 
-              <Link >
+            {!productAddedToCart && 
+              <Link to='/checkout'>
                 <Button 
                   variant='outline-dark'
                   size='lg' 
                   className='button'
                   onClick={handleClick}>Add to cart</Button>
               </Link>}
-            {showCheckoutButton && 
+            {productAddedToCart && 
               <Link to='/checkout'>
                 <Button 
                 variant='outline-dark'

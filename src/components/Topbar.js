@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ItemsListContext from '../assets/ItemsList';
 import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -7,6 +8,11 @@ import LinkStyled from '../styles/LinkStyled';
 import { BsBag as Cart } from 'react-icons/bs';
 
 const Topbar = () => {
+
+  const itemsList = useContext(ItemsListContext);
+  const itemsCount = itemsList.map(item => item.addedToCart);
+  console.log(itemsCount)
+
   return (
     <header 
       style={{
@@ -42,7 +48,7 @@ const Topbar = () => {
             <Link to='/checkout'>
               <LinkStyled>
                 <Cart className='cartIcon' />
-                <span className='itemsIcon'>0</span>
+                <span className='itemsIcon'>{itemsCount.length}</span>
               </LinkStyled>
             </Link>
           </Nav>
