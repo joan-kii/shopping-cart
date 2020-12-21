@@ -4,6 +4,7 @@ import Image from 'react-bootstrap/Image';
 import guitar from '../assets/electric-guitar.jpg';
 
 const Checkout = (props) => {
+  
   return (
     <CheckoutStyled>
       <div className='content'>

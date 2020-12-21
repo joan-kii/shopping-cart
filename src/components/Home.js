@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import HomeStyled from './styles/HomeStyled';
-import Title from './styles/TitleStyled';
+import HomeStyled from '../styles/HomeStyled';
+import Title from '../styles/TitleStyled';
 import { Link } from 'react-router-dom';
 
 const Home = () => {

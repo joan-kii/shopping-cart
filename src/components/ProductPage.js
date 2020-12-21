@@ -1,14 +1,12 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import ProductPageStyled from '../styles/ProductPageStyled';
-import ItemsListContext from '../assets/ItemsList';
 
 const ProductPage = (props) => {
 
-  const itemsList = useContext(ItemsListContext);
-
+  const itemsList = props.items;
   const itemIndex = itemsList.findIndex((item) => item.name === props.name);
   const product = itemsList[itemIndex];
   const [productAddedToCart, setProductAddedToCart] = useState(product.addedToCart)
@@ -17,7 +15,6 @@ const ProductPage = (props) => {
     setProductAddedToCart(true);
   };
 
-  console.log(productAddedToCart)
   return (
     <ProductPageStyled>
       <div className='content'>
