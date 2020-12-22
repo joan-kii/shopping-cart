@@ -8,12 +8,10 @@ import Routes from './Routes';
 
 const App = () => {
 
-  const itemsInCart = [];
-
   return (
     <BrowserRouter>
       <ItemsContextProvider>
-        <Topbar itemsCount={itemsInCart.length} />
+        <Topbar />
         <main>
           <Routes />
         </main>

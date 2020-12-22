@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
@@ -9,10 +9,9 @@ const ProductPage = (props) => {
   const itemsList = props.items;
   const itemIndex = itemsList.findIndex((item) => item.name === props.name);
   const product = itemsList[itemIndex];
-  const [productAddedToCart, setProductAddedToCart] = useState(product.addedToCart)
  
   const handleClick = () => {
-    setProductAddedToCart(true);
+    props.toggleItemToCart(itemIndex, !product.addedToCart);
   };
 
   return (
@@ -23,7 +22,7 @@ const ProductPage = (props) => {
           <h2 className='productName'>{product.name}</h2>
           <p className='productInfo'>{product.text}</p>
           <p className='productPrice'>{product.price}</p>
-          {productAddedToCart && <h3>Added to your cart</h3> }
+          {product.addedToCart && <h3>Added to your cart</h3> }
           <div className='wrapButtons'>
             <Link to='/catalog'>
               <Button 
@@ -31,7 +30,7 @@ const ProductPage = (props) => {
                 size='lg' 
                 className='button'>Back to shop</Button>
             </Link>
-            {!productAddedToCart && 
+            {!product.addedToCart && 
               <Link to='/checkout'>
                 <Button 
                   variant='outline-dark'
@@ -39,7 +38,7 @@ const ProductPage = (props) => {
                   className='button'
                   onClick={handleClick}>Add to cart</Button>
               </Link>}
-            {productAddedToCart && 
+            {product.addedToCart && 
               <Link to='/checkout'>
                 <Button 
                 variant='outline-dark'

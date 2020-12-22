@@ -8,7 +8,7 @@ import Checkout from './components/Checkout';
 
 const Routes = () => {
   
-  const { items } = useContext(ItemsContext);
+  const { items, toggleItemToCart } = useContext(ItemsContext);
 
   return (
     <Switch>
@@ -25,13 +25,15 @@ const Routes = () => {
         render={(routeProps) => (
           <ProductPage 
             name={routeProps.match.params.name} 
-            items={items} />
+            items={items} 
+            toggleItemToCart={toggleItemToCart} />
         )} />
 
       <Route exact 
         path='/checkout' 
         component={Checkout} 
-        items={items} />
+        items={items} 
+        toggleItemToCart={toggleItemToCart} />
     </Switch> 
   )
 };
