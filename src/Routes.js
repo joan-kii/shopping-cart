@@ -30,10 +30,12 @@ const Routes = () => {
         )} />
 
       <Route exact 
-        path='/checkout' 
-        component={Checkout} 
-        items={items} 
-        toggleItemToCart={toggleItemToCart} />
+        path='/checkout'
+        render={(props) => (
+          <Checkout 
+            items={items} 
+            toggleItemToCart={toggleItemToCart} />
+        )} />
     </Switch> 
   )
 };
