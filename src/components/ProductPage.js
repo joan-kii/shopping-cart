@@ -9,6 +9,7 @@ const ProductPage = (props) => {
   const itemsList = props.items;
   const itemIndex = itemsList.findIndex((item) => item.name === props.name);
   const product = itemsList[itemIndex];
+  const priceItemFormatted = product.price.toLocaleString('de-DE') + ' €';
  
   const handleClick = () => {
     props.toggleItemToCart(itemIndex, !product.addedToCart);
@@ -21,7 +22,7 @@ const ProductPage = (props) => {
         <div className='productInfo'>
           <h2 className='productName'>{product.name}</h2>
           <p className='productInfo'>{product.text}</p>
-          <p className='productPrice'>{product.price}</p>
+          <p className='productPrice'>{priceItemFormatted}</p>
           {product.addedToCart && <h3>Added to your cart</h3> }
           <div className='wrapButtons'>
             <Link to='/catalog'>

@@ -15,17 +15,18 @@ const CheckoutStyled = styled.div`
   background-color: #0e1111;
 
   .content {
-    border-radius: 5px;
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 50%;
-    padding: 30px;
     background-color: white;
+    border-radius: 5px;
+    padding: 30px;
   }
 
   .checkoutTitle {
     margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 3em;
   }
 
