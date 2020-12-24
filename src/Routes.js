@@ -33,6 +33,7 @@ const Routes = () => {
         path='/checkout'
         render={(props) => (
           <Checkout 
+            {...props}
             items={items} 
             toggleItemToCart={toggleItemToCart} />
         )} />

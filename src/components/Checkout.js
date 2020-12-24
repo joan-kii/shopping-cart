@@ -22,7 +22,10 @@ const Checkout = (props) => {
         Please visit <a href='https://www.nashguitars.com' target='_blank' rel='noreferrer'>Nashguitars</a> and enjoy with these little pieces of art.
       </Popover.Content> 
     </Popover>
-  )
+  );
+  const handleClick = (item, index) => {
+    props.toggleItemToCart(index, !item.addedToCart);
+  };
   
   return (
     <CheckoutStyled>
@@ -61,7 +64,8 @@ const Checkout = (props) => {
               <Button
                 variant='outline-dark'
                 size='lg'
-                className='button'>
+                className='button'
+                onClick={()=>handleClick(item, index)}>
                 Remove Item
               </Button>
             </div>
