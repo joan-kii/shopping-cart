@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CheckoutStyled from '../styles/CheckoutStyled';
 import CartItemStyled from '../styles/CartItemStyled';
@@ -22,6 +22,8 @@ const Checkout = ({ items, toggleItemToCart }) => {
       </Popover.Content> 
     </Popover>
   );
+  const [total, setTotal] = useState(cartList.reduce((total, item) => {
+    return total + item.price}, 0));
   
   return (
     <CheckoutStyled>
@@ -59,7 +61,10 @@ const Checkout = ({ items, toggleItemToCart }) => {
               <Form.Label className='label'>
                 Quantity
               </Form.Label>
-              <Form.Control as='select' className='select'>
+              <Form.Control as='select' 
+                className='select'
+                onChange={(event) => setTotal(cartList.reduce((total, item) => {
+                  return total + item.price * event.target.value}, 0))}>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -69,7 +74,8 @@ const Checkout = ({ items, toggleItemToCart }) => {
                 variant='outline-dark'
                 size='lg'
                 className='button'
-                onClick={() => toggleItemToCart(item.id, !item.addedToCart)}>
+                onClick={() => 
+                  toggleItemToCart(item.id, !item.addedToCart)}>
                 Remove Item
               </Button>
             </div>
@@ -77,7 +83,7 @@ const Checkout = ({ items, toggleItemToCart }) => {
           </CartItemStyled>
 
         )}
-        <h2 className='total'>Total: {}</h2> 
+        <h2 className='total'>Total: {`${total.toLocaleString('de-DE')} €`}</h2> 
         <div className='checkoutButtons'>
           <Link to='/catalog'>
             <Button

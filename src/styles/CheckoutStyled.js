@@ -36,7 +36,9 @@ const CheckoutStyled = styled.div`
   }
 
   .total {
+    display: flex;
     width: 100%;
+    justify-content: right;
     margin: 2em 0;
     border-top: 1px grey solid;
   }
