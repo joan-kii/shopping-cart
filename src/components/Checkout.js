@@ -9,9 +9,8 @@ import Popover from 'react-bootstrap/Popover';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import guitar from '../assets/electric-guitar.jpg';
 
-const Checkout = (props) => {
-  
-  const items = props.items;
+const Checkout = ({ items, toggleItemToCart }) => {
+
   const cartList = items.filter(item => item.addedToCart === true);
   const popover = (
     <Popover>
@@ -23,9 +22,6 @@ const Checkout = (props) => {
       </Popover.Content> 
     </Popover>
   );
-  const handleClick = (item, index) => {
-    props.toggleItemToCart(index, !item.addedToCart);
-  };
   
   return (
     <CheckoutStyled>
@@ -34,6 +30,14 @@ const Checkout = (props) => {
       <div className='content'>
         <h2 className='checkoutTitle'>Your Cart is Empty</h2>
         <Image src={guitar} className='guitarImage' />
+        <Link to='/catalog'>
+          <Button
+            variant='outline-dark'
+            size='lg'
+            className='button'>
+            Back to Shop
+          </Button>
+        </Link>
       </div>}
 
       {cartList.length > 0 && 
@@ -65,7 +69,7 @@ const Checkout = (props) => {
                 variant='outline-dark'
                 size='lg'
                 className='button'
-                onClick={()=>handleClick(item, index)}>
+                onClick={() => toggleItemToCart(item.id, !item.addedToCart)}>
                 Remove Item
               </Button>
             </div>

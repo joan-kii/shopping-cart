@@ -30,6 +30,7 @@ const CheckoutStyled = styled.div`
 
   .guitarImage {
     margin-top: 70px;
+    margin-bottom: 4em;
     width: 10em;
     height: 10em;
   }
