@@ -12,6 +12,7 @@ import guitar from '../assets/electric-guitar.jpg';
 const Checkout = ({ items, toggleItemToCart }) => {
 
   const cartList = items.filter(item => item.addedToCart === true);
+
   const popover = (
     <Popover>
       <Popover.Title as='h3'>
@@ -22,9 +23,21 @@ const Checkout = ({ items, toggleItemToCart }) => {
       </Popover.Content> 
     </Popover>
   );
-  const [total, setTotal] = useState(cartList.reduce((total, item) => {
-    return total + item.price}, 0));
-  
+
+  const [total, setTotal] = useState(cartList.reduce((subTotal, item) => {
+    return subTotal + item.price}, 0));
+
+  const updatePrice = (item, value) => {
+    item.quantity = Number(value);
+    setTotal(cartList.reduce((subTotal, item) => {
+      return subTotal + item.price * (item.quantity || 1)}, 0));
+    };
+
+  const removeItem = (item) => {
+    setTotal(total - item.price * (item.quantity || 1));
+    toggleItemToCart(item.id, !item.addedToCart);
+    };
+
   return (
     <CheckoutStyled>
 
@@ -63,8 +76,7 @@ const Checkout = ({ items, toggleItemToCart }) => {
               </Form.Label>
               <Form.Control as='select' 
                 className='select'
-                onChange={(event) => setTotal(cartList.reduce((total, item) => {
-                  return total + item.price * event.target.value}, 0))}>
+                onChange={(event) => updatePrice(item, event.target.value)}>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -74,8 +86,7 @@ const Checkout = ({ items, toggleItemToCart }) => {
                 variant='outline-dark'
                 size='lg'
                 className='button'
-                onClick={() => 
-                  toggleItemToCart(item.id, !item.addedToCart)}>
+                onClick={() => removeItem(item)}>
                 Remove Item
               </Button>
             </div>
@@ -83,6 +94,7 @@ const Checkout = ({ items, toggleItemToCart }) => {
           </CartItemStyled>
 
         )}
+        
         <h2 className='total'>Total: {`${total.toLocaleString('de-DE')} €`}</h2> 
         <div className='checkoutButtons'>
           <Link to='/catalog'>

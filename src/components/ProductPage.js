@@ -18,12 +18,15 @@ const ProductPage = (props) => {
   return (
     <ProductPageStyled>
       <div className='content'>
+
         <Image src={product.image} className='productImage' />
+
         <div className='productInfo'>
           <h2 className='productName'>{product.name}</h2>
           <p className='productInfo'>{product.text}</p>
           <p className='productPrice'>{priceItemFormatted}</p>
           {product.addedToCart && <h3>Added to your cart</h3> }
+
           <div className='wrapButtons'>
             <Link to='/catalog'>
               <Button 
@@ -31,6 +34,7 @@ const ProductPage = (props) => {
                 size='lg' 
                 className='button'>Back to shop</Button>
             </Link>
+
             {!product.addedToCart && 
               <Link to='/checkout'>
                 <Button 
@@ -39,6 +43,7 @@ const ProductPage = (props) => {
                   className='button'
                   onClick={handleClick}>Add to cart</Button>
               </Link>}
+              
             {product.addedToCart && 
               <Link to='/checkout'>
                 <Button 

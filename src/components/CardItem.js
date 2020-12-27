@@ -21,6 +21,6 @@ const CardItem = (props) => {
       </Card>
     </CardStyled>
   );
-}
+};
 
 export default CardItem;
