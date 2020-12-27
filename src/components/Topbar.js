@@ -24,7 +24,7 @@ const Topbar = () => {
         className='justify-content-between'>
 
         <Navbar.Brand>
-          <Link to='/'>
+          <Link to='/shopping-cart'>
             <Title>guitART</Title>
           </Link>
         </Navbar.Brand>
@@ -32,7 +32,7 @@ const Topbar = () => {
         <Nav>
 
           <Nav>
-            <Link to='/'>
+            <Link to='/shopping-cart'>
               <LinkStyled>Home</LinkStyled>
             </Link>
           </Nav>
