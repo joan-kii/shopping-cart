@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.js": "/shopping-cart/static/js/main.92a12051.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.92a12051.chunk.js.map",
+    "runtime-main.js": "/shopping-cart/static/js/runtime-main.b56c1ee8.js",
+    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.b56c1ee8.js.map",
+    "static/js/2.430570a3.chunk.js": "/shopping-cart/static/js/2.430570a3.chunk.js",
+    "static/js/2.430570a3.chunk.js.map": "/shopping-cart/static/js/2.430570a3.chunk.js.map",
+    "index.html": "/shopping-cart/index.html",
+    "static/js/2.430570a3.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.430570a3.chunk.js.LICENSE.txt",
+    "static/media/concert.4dadffd6.jpg": "/shopping-cart/static/media/concert.4dadffd6.jpg",
+    "static/media/electric-guitar.c243f4a6.jpg": "/shopping-cart/static/media/electric-guitar.c243f4a6.jpg",
+    "static/media/ng-black.4247b3db.jpg": "/shopping-cart/static/media/ng-black.4247b3db.jpg",
+    "static/media/ng-s63.25b800da.jpg": "/shopping-cart/static/media/ng-s63.25b800da.jpg",
+    "static/media/ng-s81.1a97a0f3.jpg": "/shopping-cart/static/media/ng-s81.1a97a0f3.jpg",
+    "static/media/ng-surfer-green.0e5aa80b.jpg": "/shopping-cart/static/media/ng-surfer-green.0e5aa80b.jpg",
+    "static/media/ng-t2hb.eed7bd86.jpg": "/shopping-cart/static/media/ng-t2hb.eed7bd86.jpg",
+    "static/media/ng-t68.c50e738f.jpg": "/shopping-cart/static/media/ng-t68.c50e738f.jpg",
+    "static/media/ng-t69tl.cfda4d52.jpg": "/shopping-cart/static/media/ng-t69tl.cfda4d52.jpg",
+    "static/media/ng-t72tl.b9b4ef70.jpg": "/shopping-cart/static/media/ng-t72tl.b9b4ef70.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b56c1ee8.js",
+    "static/js/2.430570a3.chunk.js",
+    "static/js/main.92a12051.chunk.js"
+  ]
+}
