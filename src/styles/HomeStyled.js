@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import image from '../assets/concert.jpg';
 
 const HomeStyled = styled.div`
+  height: 100vh;
   display: flex; 
   flex-direction: column;
   align-items: center;
